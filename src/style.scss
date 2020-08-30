@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto;
+}
+
+$height: 20px;
+
+.range-slider{
+    width: 800px;
+    margin-top: 100px;
+    margin: 100px auto;
+    max-width: 100%;
+    padding: 0 20px;
+    
+    // no select
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.rs{
+
+    &-container{
+        position: relative;
+    }
+
+    &-bar{
+        float: left;
+        width: 100%;
+        height: 20px;
+        border: 1px solid #ddd;
+        background-color: #f1f1f1;
+        position: relative;
+    }
+
+    &-bar-selected{
+        float: left;
+        width: 80%;
+        height: 100%;
+        height: #{$height - 2px};
+        // background-color: red;
+        position: absolute;
+        border: 0;
+    }
+
+    &-pointer{
+        left: 80%;
+        width: 20px;
+        height: #{$height};
+        cursor: pointer;
+        position: absolute;
+        background-color: blue;
+        border: 1px solid rgba(0, 0, 0, .2);
+        opacity: .5;
+
+        &[tooltip]:before{
+            content: attr(tooltip);
+            top: -35px;
+            width: auto;
+            padding: 0 10px;
+            height: 25px;
+            z-index: 1;
+            font-size: 14px;
+            position: absolute;
+            background-color: white;
+            text-align: center;
+            line-height: 27px;
+            border: 1px solid #ccc;
+            transform: translate(-50%,0);
+            left: 13px;
+        }
+    }
+
+    &-scale{
+        float: left;
+        width: 100%;
+        display: flex;
+        padding: 10px 0;
+        position: relative;
+    }
+
+    &-scale-item{
+        width: 100%;
+        position: relative;
+
+        &-ins{
+            float: left;
+            position: relative;
+        }
+
+        &:before{
+            background-color: #ccc;
+            content: "";
+            height: 8px;
+            left: 0;
+            position: absolute;
+            top: -10px;
+            width: 1px;
+        }
+
+        &:first-child &-ins{
+            float: left;
+            left: 0;
+            position: absolute;
+            text-align: left;
+            width: 0px;
+            background-color: red;
+        }
+
+        &:first-child &-ins:before{
+            left: 4px;
+        }
+
+
+        &:last-child{
+            text-align: right;
+            width: 0;
+        }
+
+        &:last-child:before{
+            left: -1px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

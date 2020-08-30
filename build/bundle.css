@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.range {
+  float: left;
+  width: 800px;
+  position: relative;
+  height: 30px;
+}
+
+.box {
+  float: left;
+  width: 800px;
+  position: relative;
+  height: 30px;
+}
+
+.box hr {
+  float: left;
+  width: 100%;
+  height: 30px;
+  border: 0;
+  background-color: #f6f6f6;
+}
+
+.box button {
+  left: 0;
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+  border: 0;
+  background-color: red;
+  position: absolute;
+}
+
+.box button:active {
+  background-color: blue;
+}
+
+.range .steps {
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.range .steps div {
+  float: left;
+  height: 10px;
+  text-align: right;
+  border-left: 1px solid #222;
+}
+
+.range .steps div:first-child:before {
+  content: "0";
+  float: left;
+}
+
+.range .steps div:last-child {
+  border-right: 1px solid #222;
+}
